@@ -1,0 +1,58 @@
+{
+  "name": "dependency_preservation",
+  "description": "Schema where dependency preservation is challenging",
+  "tables": [
+    {
+      "name": "CourseEnrollment",
+      "attributes": [
+        "Student",
+        "Course",
+        "Instructor",
+        "Department",
+        "Room"
+      ],
+      "primary_key": [
+        "Student",
+        "Course"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "Course"
+      ],
+      "right": [
+        "Instructor"
+      ]
+    },
+    {
+      "left": [
+        "Course"
+      ],
+      "right": [
+        "Department"
+      ]
+    },
+    {
+      "left": [
+        "Instructor"
+      ],
+      "right": [
+        "Department"
+      ]
+    },
+    {
+      "left": [
+        "Student",
+        "Course"
+      ],
+      "right": [
+        "Room"
+      ]
+    }
+  ],
+  "expected_normalized": {
+    "note": "Instructor \u2192 Department may be lost depending on decomposition order"
+  }
+}

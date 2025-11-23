@@ -1,0 +1,77 @@
+{
+  "name": "trivial_1",
+  "description": "Schema with trivial FDs (X -> Y where Y \u2286 X)",
+  "complexity": "edge_case",
+  "tables": [
+    {
+      "name": "R",
+      "attributes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "primary_key": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "A",
+        "B"
+      ],
+      "right": [
+        "C"
+      ]
+    },
+    {
+      "left": [
+        "A",
+        "B"
+      ],
+      "right": [
+        "A"
+      ]
+    },
+    {
+      "left": [
+        "A",
+        "B"
+      ],
+      "right": [
+        "B"
+      ]
+    }
+  ],
+  "expected_normalized": {
+    "tables": [
+      {
+        "name": "R",
+        "attributes": [
+          "A",
+          "B",
+          "C"
+        ],
+        "primary_key": [
+          "A",
+          "B"
+        ]
+      }
+    ],
+    "functional_dependencies": [
+      {
+        "left": [
+          "A",
+          "B"
+        ],
+        "right": [
+          "C"
+        ]
+      }
+    ],
+    "decomposition_steps": 0,
+    "note": "Trivial FDs don't violate BCNF"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "name": "chain_dependencies",
+  "description": "Chain of transitive dependencies causing multiple violations",
+  "complexity": "complex",
+  "tables": [
+    {
+      "name": "R",
+      "attributes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "primary_key": [
+        "A"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "A"
+      ],
+      "right": [
+        "B"
+      ]
+    },
+    {
+      "left": [
+        "B"
+      ],
+      "right": [
+        "C"
+      ]
+    },
+    {
+      "left": [
+        "C"
+      ],
+      "right": [
+        "D"
+      ]
+    },
+    {
+      "left": [
+        "A",
+        "B",
+        "C"
+      ],
+      "right": [
+        "E"
+      ]
+    }
+  ],
+  "expected_normalized": {
+    "tables": [
+      {
+        "name": "R1",
+        "attributes": [
+          "A",
+          "B"
+        ],
+        "primary_key": [
+          "A"
+        ]
+      },
+      {
+        "name": "R2",
+        "attributes": [
+          "B",
+          "C"
+        ],
+        "primary_key": [
+          "B"
+        ]
+      },
+      {
+        "name": "R3",
+        "attributes": [
+          "C",
+          "D"
+        ],
+        "primary_key": [
+          "C"
+        ]
+      },
+      {
+        "name": "R4",
+        "attributes": [
+          "A",
+          "E"
+        ],
+        "primary_key": [
+          "A"
+        ]
+      }
+    ],
+    "decomposition_steps": 3,
+    "note": "Each step in chain requires decomposition"
+  }
+}

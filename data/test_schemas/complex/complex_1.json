@@ -1,0 +1,96 @@
+{
+  "name": "complex_1",
+  "description": "Complex schema with multiple interdependent BCNF violations",
+  "complexity": "complex",
+  "tables": [
+    {
+      "name": "CourseEnrollment",
+      "attributes": [
+        "StudentID",
+        "CourseID",
+        "InstructorID",
+        "Department",
+        "Room",
+        "Grade"
+      ],
+      "primary_key": [
+        "StudentID",
+        "CourseID"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "CourseID"
+      ],
+      "right": [
+        "InstructorID"
+      ]
+    },
+    {
+      "left": [
+        "InstructorID"
+      ],
+      "right": [
+        "Department"
+      ]
+    },
+    {
+      "left": [
+        "CourseID"
+      ],
+      "right": [
+        "Room"
+      ]
+    },
+    {
+      "left": [
+        "StudentID",
+        "CourseID"
+      ],
+      "right": [
+        "Grade"
+      ]
+    }
+  ],
+  "expected_normalized": {
+    "tables": [
+      {
+        "name": "Course",
+        "attributes": [
+          "CourseID",
+          "InstructorID",
+          "Room"
+        ],
+        "primary_key": [
+          "CourseID"
+        ]
+      },
+      {
+        "name": "Instructor",
+        "attributes": [
+          "InstructorID",
+          "Department"
+        ],
+        "primary_key": [
+          "InstructorID"
+        ]
+      },
+      {
+        "name": "Enrollment",
+        "attributes": [
+          "StudentID",
+          "CourseID",
+          "Grade"
+        ],
+        "primary_key": [
+          "StudentID",
+          "CourseID"
+        ]
+      }
+    ],
+    "decomposition_steps": 3,
+    "note": "Multiple valid decomposition orders possible"
+  }
+}

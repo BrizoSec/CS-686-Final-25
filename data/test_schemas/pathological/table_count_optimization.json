@@ -1,0 +1,73 @@
+{
+  "name": "table_count_optimization",
+  "description": "Schema where table count can be optimized",
+  "tables": [
+    {
+      "name": "R",
+      "attributes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "primary_key": [
+        "A"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "A"
+      ],
+      "right": [
+        "B"
+      ]
+    },
+    {
+      "left": [
+        "A"
+      ],
+      "right": [
+        "C"
+      ]
+    },
+    {
+      "left": [
+        "B"
+      ],
+      "right": [
+        "D"
+      ]
+    },
+    {
+      "left": [
+        "C"
+      ],
+      "right": [
+        "E"
+      ]
+    },
+    {
+      "left": [
+        "D"
+      ],
+      "right": [
+        "F"
+      ]
+    },
+    {
+      "left": [
+        "E"
+      ],
+      "right": [
+        "F"
+      ]
+    }
+  ],
+  "expected_normalized": {
+    "note": "Optimal decomposition minimizes table count while maintaining BCNF"
+  }
+}

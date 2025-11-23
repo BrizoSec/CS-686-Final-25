@@ -1,0 +1,74 @@
+{
+  "name": "course_instructor_violation",
+  "description": "Simple BCNF violation - Course determines Instructor",
+  "complexity": "simple",
+  "tables": [
+    {
+      "name": "Enrollment",
+      "attributes": [
+        "StudentID",
+        "Course",
+        "Instructor"
+      ],
+      "primary_key": [
+        "StudentID",
+        "Course"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "Course"
+      ],
+      "right": [
+        "Instructor"
+      ]
+    },
+    {
+      "left": [
+        "StudentID",
+        "Course"
+      ],
+      "right": [
+        "Instructor"
+      ]
+    }
+  ],
+  "expected_normalized": {
+    "tables": [
+      {
+        "name": "Courses",
+        "attributes": [
+          "Course",
+          "Instructor"
+        ],
+        "primary_key": [
+          "Course"
+        ]
+      },
+      {
+        "name": "Enrollments",
+        "attributes": [
+          "StudentID",
+          "Course"
+        ],
+        "primary_key": [
+          "StudentID",
+          "Course"
+        ]
+      }
+    ],
+    "functional_dependencies": [
+      {
+        "left": [
+          "Course"
+        ],
+        "right": [
+          "Instructor"
+        ]
+      }
+    ],
+    "decomposition_steps": 1
+  }
+}

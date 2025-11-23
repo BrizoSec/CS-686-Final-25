@@ -1,0 +1,84 @@
+{
+  "name": "complex_interdependent",
+  "description": "Complex schema with interdependent BCNF violations",
+  "tables": [
+    {
+      "name": "ProjectAssignment",
+      "attributes": [
+        "Employee",
+        "Project",
+        "Role",
+        "Manager",
+        "Department",
+        "Budget",
+        "Deadline"
+      ],
+      "primary_key": [
+        "Employee",
+        "Project"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "Employee"
+      ],
+      "right": [
+        "Department"
+      ]
+    },
+    {
+      "left": [
+        "Employee"
+      ],
+      "right": [
+        "Manager"
+      ]
+    },
+    {
+      "left": [
+        "Project"
+      ],
+      "right": [
+        "Budget"
+      ]
+    },
+    {
+      "left": [
+        "Project"
+      ],
+      "right": [
+        "Deadline"
+      ]
+    },
+    {
+      "left": [
+        "Manager"
+      ],
+      "right": [
+        "Department"
+      ]
+    },
+    {
+      "left": [
+        "Employee",
+        "Project"
+      ],
+      "right": [
+        "Role"
+      ]
+    },
+    {
+      "left": [
+        "Department"
+      ],
+      "right": [
+        "Manager"
+      ]
+    }
+  ],
+  "expected_normalized": {
+    "note": "Multiple decomposition paths exist with different trade-offs"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "university_courses",
+  "description": "University course registration system with BCNF violations",
+  "tables": [
+    {
+      "name": "CourseOffering",
+      "attributes": ["StudentID", "CourseID", "InstructorID", "Department", "Grade"],
+      "primary_key": ["StudentID", "CourseID"]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": ["CourseID"],
+      "right": ["InstructorID"]
+    },
+    {
+      "left": ["CourseID"],
+      "right": ["Department"]
+    },
+    {
+      "left": ["InstructorID"],
+      "right": ["Department"]
+    },
+    {
+      "left": ["StudentID", "CourseID"],
+      "right": ["Grade"]
+    }
+  ],
+  "expected_normalized": {
+    "explanation": "Multiple BCNF violations: CourseID -> InstructorID, CourseID -> Department, InstructorID -> Department. Requires multiple decomposition steps."
+  }
+}

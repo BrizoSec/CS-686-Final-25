@@ -1,0 +1,72 @@
+{
+  "name": "medium_random_2",
+  "description": "Randomly generated schema with 6 attributes and 5 FDs",
+  "complexity": "random",
+  "tables": [
+    {
+      "name": "R",
+      "attributes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "primary_key": [
+        "A"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "C",
+        "D"
+      ],
+      "right": [
+        "B"
+      ]
+    },
+    {
+      "left": [
+        "E",
+        "D",
+        "A"
+      ],
+      "right": [
+        "F"
+      ]
+    },
+    {
+      "left": [
+        "D",
+        "F",
+        "A"
+      ],
+      "right": [
+        "C"
+      ]
+    },
+    {
+      "left": [
+        "C",
+        "A",
+        "D"
+      ],
+      "right": [
+        "F"
+      ]
+    },
+    {
+      "left": [
+        "A"
+      ],
+      "right": [
+        "C",
+        "E"
+      ]
+    }
+  ],
+  "note": "Random schema - may or may not have BCNF violations"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "simple_violation",
+  "description": "Simple BCNF violation example",
+  "tables": [
+    {
+      "name": "R",
+      "attributes": ["A", "B", "C"],
+      "primary_key": ["A", "B"]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": ["A"],
+      "right": ["B"]
+    },
+    {
+      "left": ["A", "B"],
+      "right": ["C"]
+    }
+  ],
+  "expected_normalized": {
+    "tables": [
+      {
+        "name": "R1",
+        "attributes": ["A", "B"],
+        "primary_key": ["A"]
+      },
+      {
+        "name": "R2",
+        "attributes": ["A", "C"],
+        "primary_key": ["A"]
+      }
+    ],
+    "explanation": "A -> B violates BCNF because A is not a superkey. Decompose into R1(A,B) and R2(A,C)."
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "name": "order_dependent_1",
+  "description": "Schema where decomposition order matters for intermediate steps",
+  "tables": [
+    {
+      "name": "R",
+      "attributes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "primary_key": [
+        "A",
+        "C"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "A"
+      ],
+      "right": [
+        "B"
+      ]
+    },
+    {
+      "left": [
+        "C"
+      ],
+      "right": [
+        "D"
+      ]
+    },
+    {
+      "left": [
+        "B"
+      ],
+      "right": [
+        "E"
+      ]
+    }
+  ],
+  "expected_normalized": {
+    "tables": [
+      {
+        "name": "R1",
+        "attributes": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "name": "R2",
+        "attributes": [
+          "C",
+          "D"
+        ]
+      },
+      {
+        "name": "R3",
+        "attributes": [
+          "B",
+          "E"
+        ]
+      },
+      {
+        "name": "R4",
+        "attributes": [
+          "A",
+          "C"
+        ]
+      }
+    ],
+    "note": "Multiple valid decomposition orders exist"
+  }
+}

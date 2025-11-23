@@ -1,0 +1,94 @@
+{
+  "name": "composite_key_violation",
+  "description": "BCNF violation with composite primary key",
+  "complexity": "medium",
+  "tables": [
+    {
+      "name": "R",
+      "attributes": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "primary_key": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "A",
+        "B"
+      ],
+      "right": [
+        "C"
+      ]
+    },
+    {
+      "left": [
+        "A",
+        "B"
+      ],
+      "right": [
+        "D"
+      ]
+    },
+    {
+      "left": [
+        "B"
+      ],
+      "right": [
+        "C"
+      ]
+    }
+  ],
+  "expected_normalized": {
+    "tables": [
+      {
+        "name": "R1",
+        "attributes": [
+          "B",
+          "C"
+        ],
+        "primary_key": [
+          "B"
+        ]
+      },
+      {
+        "name": "R2",
+        "attributes": [
+          "A",
+          "B",
+          "D"
+        ],
+        "primary_key": [
+          "A",
+          "B"
+        ]
+      }
+    ],
+    "functional_dependencies": [
+      {
+        "left": [
+          "B"
+        ],
+        "right": [
+          "C"
+        ]
+      },
+      {
+        "left": [
+          "A",
+          "B"
+        ],
+        "right": [
+          "D"
+        ]
+      }
+    ],
+    "decomposition_steps": 1
+  }
+}

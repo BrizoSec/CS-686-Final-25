@@ -1,0 +1,170 @@
+{
+  "name": "synthetic_large",
+  "description": "Large synthetic schema with 15 attributes and chain dependencies",
+  "tables": [
+    {
+      "name": "LargeTable",
+      "attributes": [
+        "A0",
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A6",
+        "A7",
+        "A8",
+        "A9",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14"
+      ],
+      "primary_key": [
+        "A0"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "A0"
+      ],
+      "right": [
+        "A1"
+      ]
+    },
+    {
+      "left": [
+        "A1"
+      ],
+      "right": [
+        "A2"
+      ]
+    },
+    {
+      "left": [
+        "A2"
+      ],
+      "right": [
+        "A3"
+      ]
+    },
+    {
+      "left": [
+        "A3"
+      ],
+      "right": [
+        "A4"
+      ]
+    },
+    {
+      "left": [
+        "A4"
+      ],
+      "right": [
+        "A5"
+      ]
+    },
+    {
+      "left": [
+        "A5"
+      ],
+      "right": [
+        "A6"
+      ]
+    },
+    {
+      "left": [
+        "A6"
+      ],
+      "right": [
+        "A7"
+      ]
+    },
+    {
+      "left": [
+        "A7"
+      ],
+      "right": [
+        "A8"
+      ]
+    },
+    {
+      "left": [
+        "A8"
+      ],
+      "right": [
+        "A9"
+      ]
+    },
+    {
+      "left": [
+        "A9"
+      ],
+      "right": [
+        "A10"
+      ]
+    },
+    {
+      "left": [
+        "A10"
+      ],
+      "right": [
+        "A11"
+      ]
+    },
+    {
+      "left": [
+        "A11"
+      ],
+      "right": [
+        "A12"
+      ]
+    },
+    {
+      "left": [
+        "A12"
+      ],
+      "right": [
+        "A13"
+      ]
+    },
+    {
+      "left": [
+        "A13"
+      ],
+      "right": [
+        "A14"
+      ]
+    },
+    {
+      "left": [
+        "A2"
+      ],
+      "right": [
+        "A5"
+      ]
+    },
+    {
+      "left": [
+        "A4"
+      ],
+      "right": [
+        "A7"
+      ]
+    },
+    {
+      "left": [
+        "A6"
+      ],
+      "right": [
+        "A10"
+      ]
+    }
+  ],
+  "expected_normalized": {
+    "note": "Greedy may create suboptimal decomposition due to sequential processing"
+  }
+}

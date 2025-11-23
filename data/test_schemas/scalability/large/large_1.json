@@ -1,0 +1,196 @@
+{
+  "name": "large_1",
+  "description": "Randomly generated schema with 14 attributes and 17 FDs",
+  "complexity": "random",
+  "tables": [
+    {
+      "name": "R",
+      "attributes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N"
+      ],
+      "primary_key": [
+        "A"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "H"
+      ],
+      "right": [
+        "C"
+      ]
+    },
+    {
+      "left": [
+        "I",
+        "D",
+        "F"
+      ],
+      "right": [
+        "K"
+      ]
+    },
+    {
+      "left": [
+        "B"
+      ],
+      "right": [
+        "D",
+        "K"
+      ]
+    },
+    {
+      "left": [
+        "K"
+      ],
+      "right": [
+        "M"
+      ]
+    },
+    {
+      "left": [
+        "I"
+      ],
+      "right": [
+        "D"
+      ]
+    },
+    {
+      "left": [
+        "C",
+        "I"
+      ],
+      "right": [
+        "M",
+        "B"
+      ]
+    },
+    {
+      "left": [
+        "L",
+        "F",
+        "E"
+      ],
+      "right": [
+        "J",
+        "D"
+      ]
+    },
+    {
+      "left": [
+        "K",
+        "D"
+      ],
+      "right": [
+        "L",
+        "E"
+      ]
+    },
+    {
+      "left": [
+        "J",
+        "H",
+        "F"
+      ],
+      "right": [
+        "D",
+        "G"
+      ]
+    },
+    {
+      "left": [
+        "D"
+      ],
+      "right": [
+        "N",
+        "M"
+      ]
+    },
+    {
+      "left": [
+        "F",
+        "G",
+        "E"
+      ],
+      "right": [
+        "C",
+        "H"
+      ]
+    },
+    {
+      "left": [
+        "G"
+      ],
+      "right": [
+        "F"
+      ]
+    },
+    {
+      "left": [
+        "I",
+        "E",
+        "L"
+      ],
+      "right": [
+        "F",
+        "C"
+      ]
+    },
+    {
+      "left": [
+        "I",
+        "B"
+      ],
+      "right": [
+        "E",
+        "A"
+      ]
+    },
+    {
+      "left": [
+        "D",
+        "L"
+      ],
+      "right": [
+        "A",
+        "M"
+      ]
+    },
+    {
+      "left": [
+        "A"
+      ],
+      "right": [
+        "M",
+        "H"
+      ]
+    },
+    {
+      "left": [
+        "F",
+        "N",
+        "A"
+      ],
+      "right": [
+        "J",
+        "M"
+      ]
+    }
+  ],
+  "note": "Random schema - may or may not have BCNF violations"
+}

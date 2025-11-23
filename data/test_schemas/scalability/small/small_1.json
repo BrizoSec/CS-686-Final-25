@@ -1,0 +1,40 @@
+{
+  "name": "small_1",
+  "description": "Randomly generated schema with 5 attributes and 2 FDs",
+  "complexity": "random",
+  "tables": [
+    {
+      "name": "R",
+      "attributes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "primary_key": [
+        "A"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "C"
+      ],
+      "right": [
+        "A"
+      ]
+    },
+    {
+      "left": [
+        "C"
+      ],
+      "right": [
+        "A",
+        "E"
+      ]
+    }
+  ],
+  "note": "Random schema - may or may not have BCNF violations"
+}

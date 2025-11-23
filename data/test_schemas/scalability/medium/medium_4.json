@@ -1,0 +1,123 @@
+{
+  "name": "medium_4",
+  "description": "Randomly generated schema with 8 attributes and 10 FDs",
+  "complexity": "random",
+  "tables": [
+    {
+      "name": "R",
+      "attributes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "primary_key": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "E"
+      ],
+      "right": [
+        "D"
+      ]
+    },
+    {
+      "left": [
+        "D",
+        "A",
+        "C"
+      ],
+      "right": [
+        "B",
+        "H"
+      ]
+    },
+    {
+      "left": [
+        "E",
+        "A",
+        "H"
+      ],
+      "right": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "left": [
+        "E"
+      ],
+      "right": [
+        "G"
+      ]
+    },
+    {
+      "left": [
+        "C",
+        "A"
+      ],
+      "right": [
+        "D",
+        "F"
+      ]
+    },
+    {
+      "left": [
+        "F"
+      ],
+      "right": [
+        "A"
+      ]
+    },
+    {
+      "left": [
+        "C",
+        "F",
+        "E"
+      ],
+      "right": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "left": [
+        "D",
+        "G"
+      ],
+      "right": [
+        "C"
+      ]
+    },
+    {
+      "left": [
+        "G",
+        "F",
+        "C"
+      ],
+      "right": [
+        "B"
+      ]
+    },
+    {
+      "left": [
+        "D",
+        "F",
+        "B"
+      ],
+      "right": [
+        "H"
+      ]
+    }
+  ],
+  "note": "Random schema - may or may not have BCNF violations"
+}

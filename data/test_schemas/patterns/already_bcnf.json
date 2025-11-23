@@ -1,0 +1,71 @@
+{
+  "name": "already_bcnf",
+  "description": "Schema already in BCNF - no decomposition needed",
+  "complexity": "edge_case",
+  "tables": [
+    {
+      "name": "R",
+      "attributes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "primary_key": [
+        "A"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "A"
+      ],
+      "right": [
+        "B"
+      ]
+    },
+    {
+      "left": [
+        "A"
+      ],
+      "right": [
+        "C"
+      ]
+    }
+  ],
+  "expected_normalized": {
+    "tables": [
+      {
+        "name": "R",
+        "attributes": [
+          "A",
+          "B",
+          "C"
+        ],
+        "primary_key": [
+          "A"
+        ]
+      }
+    ],
+    "functional_dependencies": [
+      {
+        "left": [
+          "A"
+        ],
+        "right": [
+          "B"
+        ]
+      },
+      {
+        "left": [
+          "A"
+        ],
+        "right": [
+          "C"
+        ]
+      }
+    ],
+    "decomposition_steps": 0,
+    "note": "Already in BCNF"
+  }
+}

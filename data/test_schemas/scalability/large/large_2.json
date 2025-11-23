@@ -1,0 +1,144 @@
+{
+  "name": "large_2",
+  "description": "Randomly generated schema with 11 attributes and 12 FDs",
+  "complexity": "random",
+  "tables": [
+    {
+      "name": "R",
+      "attributes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K"
+      ],
+      "primary_key": [
+        "A"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "E",
+        "A"
+      ],
+      "right": [
+        "C"
+      ]
+    },
+    {
+      "left": [
+        "C"
+      ],
+      "right": [
+        "I",
+        "F"
+      ]
+    },
+    {
+      "left": [
+        "E"
+      ],
+      "right": [
+        "C",
+        "F"
+      ]
+    },
+    {
+      "left": [
+        "E"
+      ],
+      "right": [
+        "D"
+      ]
+    },
+    {
+      "left": [
+        "D"
+      ],
+      "right": [
+        "H",
+        "E"
+      ]
+    },
+    {
+      "left": [
+        "B",
+        "D",
+        "K"
+      ],
+      "right": [
+        "E"
+      ]
+    },
+    {
+      "left": [
+        "G",
+        "A"
+      ],
+      "right": [
+        "E"
+      ]
+    },
+    {
+      "left": [
+        "J",
+        "D",
+        "B"
+      ],
+      "right": [
+        "G"
+      ]
+    },
+    {
+      "left": [
+        "D",
+        "H",
+        "K"
+      ],
+      "right": [
+        "E",
+        "C"
+      ]
+    },
+    {
+      "left": [
+        "A",
+        "K",
+        "C"
+      ],
+      "right": [
+        "I",
+        "H"
+      ]
+    },
+    {
+      "left": [
+        "B",
+        "F",
+        "A"
+      ],
+      "right": [
+        "H"
+      ]
+    },
+    {
+      "left": [
+        "J",
+        "F"
+      ],
+      "right": [
+        "D",
+        "K"
+      ]
+    }
+  ],
+  "note": "Random schema - may or may not have BCNF violations"
+}

@@ -1,0 +1,86 @@
+{
+  "name": "complex_random_1",
+  "description": "Randomly generated schema with 8 attributes and 6 FDs",
+  "complexity": "random",
+  "tables": [
+    {
+      "name": "R",
+      "attributes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "primary_key": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "D",
+        "C"
+      ],
+      "right": [
+        "E",
+        "F"
+      ]
+    },
+    {
+      "left": [
+        "A",
+        "G",
+        "D"
+      ],
+      "right": [
+        "F",
+        "E"
+      ]
+    },
+    {
+      "left": [
+        "H"
+      ],
+      "right": [
+        "D",
+        "A"
+      ]
+    },
+    {
+      "left": [
+        "H",
+        "G",
+        "D"
+      ],
+      "right": [
+        "F"
+      ]
+    },
+    {
+      "left": [
+        "G"
+      ],
+      "right": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "left": [
+        "B",
+        "A"
+      ],
+      "right": [
+        "C",
+        "E"
+      ]
+    }
+  ],
+  "note": "Random schema - may or may not have BCNF violations"
+}

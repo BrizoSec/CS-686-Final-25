@@ -1,0 +1,81 @@
+{
+  "name": "simple_2",
+  "description": "Simple BCNF violation with single decomposition",
+  "complexity": "simple",
+  "tables": [
+    {
+      "name": "R",
+      "attributes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "primary_key": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "functional_dependencies": [
+    {
+      "left": [
+        "A"
+      ],
+      "right": [
+        "B"
+      ]
+    },
+    {
+      "left": [
+        "A",
+        "B"
+      ],
+      "right": [
+        "C"
+      ]
+    }
+  ],
+  "expected_normalized": {
+    "tables": [
+      {
+        "name": "R1",
+        "attributes": [
+          "A",
+          "B"
+        ],
+        "primary_key": [
+          "A"
+        ]
+      },
+      {
+        "name": "R2",
+        "attributes": [
+          "A",
+          "C"
+        ],
+        "primary_key": [
+          "A"
+        ]
+      }
+    ],
+    "functional_dependencies": [
+      {
+        "left": [
+          "A"
+        ],
+        "right": [
+          "B"
+        ]
+      },
+      {
+        "left": [
+          "A"
+        ],
+        "right": [
+          "C"
+        ]
+      }
+    ],
+    "decomposition_steps": 1
+  }
+}
